@@ -118,11 +118,9 @@ extension VehicleMapViewController: MKMapViewDelegate {
     func addVehiclesToMap(list: [VehicleAnnotationViewModel]) {
         mapView.removeAnnotations(mapView.annotations)
         for vehicleAnnotation in list {
-            let radiansDirection = vehicleAnnotation.heading * .pi / 180
             guard let image = UIImage(named: "car-top") else { return }
-            let rotatedImage = image.rotate(radians: CGFloat(radiansDirection))
             let myAnnotation = VehicleAnnotation(with: CLLocationCoordinate2DMake(vehicleAnnotation.lat, vehicleAnnotation.lon),
-                                                                    image: rotatedImage)
+                                                                    image: image)
             myAnnotation.coordinate = CLLocationCoordinate2DMake(vehicleAnnotation.lat, vehicleAnnotation.lon);
             mapView.addAnnotation(myAnnotation)
         }
