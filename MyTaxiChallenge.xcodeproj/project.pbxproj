@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E6D98C4620FE41CD00D5D2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C4520FE41CD00D5D2D0 /* AppDelegate.swift */; };
-		E6D98C4820FE41CD00D5D2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C4720FE41CD00D5D2D0 /* ViewController.swift */; };
 		E6D98C4B20FE41CD00D5D2D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C4920FE41CD00D5D2D0 /* Main.storyboard */; };
 		E6D98C4D20FE41CE00D5D2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C4C20FE41CE00D5D2D0 /* Assets.xcassets */; };
 		E6D98C5020FE41CE00D5D2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C4E20FE41CE00D5D2D0 /* LaunchScreen.storyboard */; };
 		E6D98C5B20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C5A20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift */; };
+		E6D98C6B20FE433800D5D2D0 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C6A20FE433800D5D2D0 /* Vehicle.swift */; };
+		E6D98C6F20FE435B00D5D2D0 /* APIServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C6E20FE435B00D5D2D0 /* APIServiceManager.m */; };
+		E6D98C7120FE444900D5D2D0 /* VehicleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C7020FE444900D5D2D0 /* VehicleMapViewController.swift */; };
+		E6D98C7320FE445600D5D2D0 /* VehicleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C7220FE445600D5D2D0 /* VehicleListViewController.swift */; };
+		E6D98C7520FE449600D5D2D0 /* VehicleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C7420FE449600D5D2D0 /* VehicleListViewModel.swift */; };
+		E6D98C7720FE44A900D5D2D0 /* VehicleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C7620FE44A900D5D2D0 /* VehicleMapViewModel.swift */; };
+		E6D98C7A20FE484100D5D2D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7920FE484100D5D2D0 /* MapKit.framework */; };
+		E6D98C7E20FE485A00D5D2D0 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7B20FE485900D5D2D0 /* NVActivityIndicatorView.framework */; };
+		E6D98C7F20FE485A00D5D2D0 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7C20FE485A00D5D2D0 /* AFNetworking.framework */; };
+		E6D98C8020FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7D20FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +37,6 @@
 /* Begin PBXFileReference section */
 		E6D98C4220FE41CC00D5D2D0 /* MyTaxiChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D98C4520FE41CD00D5D2D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6D98C4720FE41CD00D5D2D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6D98C4A20FE41CD00D5D2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6D98C4C20FE41CE00D5D2D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6D98C4F20FE41CE00D5D2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +44,18 @@
 		E6D98C5620FE41CE00D5D2D0 /* MyTaxiChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTaxiChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D98C5A20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxiChallengeTests.swift; sourceTree = "<group>"; };
 		E6D98C5C20FE41CE00D5D2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6D98C6A20FE433800D5D2D0 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		E6D98C6C20FE435A00D5D2D0 /* MyTaxiChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTaxiChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		E6D98C6D20FE435B00D5D2D0 /* APIServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIServiceManager.h; sourceTree = "<group>"; };
+		E6D98C6E20FE435B00D5D2D0 /* APIServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIServiceManager.m; sourceTree = "<group>"; };
+		E6D98C7020FE444900D5D2D0 /* VehicleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMapViewController.swift; sourceTree = "<group>"; };
+		E6D98C7220FE445600D5D2D0 /* VehicleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewController.swift; sourceTree = "<group>"; };
+		E6D98C7420FE449600D5D2D0 /* VehicleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewModel.swift; sourceTree = "<group>"; };
+		E6D98C7620FE44A900D5D2D0 /* VehicleMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMapViewModel.swift; sourceTree = "<group>"; };
+		E6D98C7920FE484100D5D2D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E6D98C7B20FE485900D5D2D0 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		E6D98C7C20FE485A00D5D2D0 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		E6D98C7D20FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D98C7E20FE485A00D5D2D0 /* NVActivityIndicatorView.framework in Frameworks */,
+				E6D98C7F20FE485A00D5D2D0 /* AFNetworking.framework in Frameworks */,
+				E6D98C8020FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */,
+				E6D98C7A20FE484100D5D2D0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +86,7 @@
 				E6D98C4420FE41CC00D5D2D0 /* MyTaxiChallenge */,
 				E6D98C5920FE41CE00D5D2D0 /* MyTaxiChallengeTests */,
 				E6D98C4320FE41CC00D5D2D0 /* Products */,
+				E6D98C7820FE484000D5D2D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +102,10 @@
 		E6D98C4420FE41CC00D5D2D0 /* MyTaxiChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				E6D98C6720FE42F600D5D2D0 /* Modules */,
+				E6D98C6620FE42ED00D5D2D0 /* Model */,
+				E6D98C6520FE42E300D5D2D0 /* Service */,
 				E6D98C4520FE41CD00D5D2D0 /* AppDelegate.swift */,
-				E6D98C4720FE41CD00D5D2D0 /* ViewController.swift */,
 				E6D98C4920FE41CD00D5D2D0 /* Main.storyboard */,
 				E6D98C4C20FE41CE00D5D2D0 /* Assets.xcassets */,
 				E6D98C4E20FE41CE00D5D2D0 /* LaunchScreen.storyboard */,
@@ -96,6 +123,62 @@
 			path = MyTaxiChallengeTests;
 			sourceTree = "<group>";
 		};
+		E6D98C6520FE42E300D5D2D0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E6D98C6D20FE435B00D5D2D0 /* APIServiceManager.h */,
+				E6D98C6E20FE435B00D5D2D0 /* APIServiceManager.m */,
+				E6D98C6C20FE435A00D5D2D0 /* MyTaxiChallenge-Bridging-Header.h */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E6D98C6620FE42ED00D5D2D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6D98C6A20FE433800D5D2D0 /* Vehicle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6D98C6720FE42F600D5D2D0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E6D98C6920FE431D00D5D2D0 /* VehicleMap */,
+				E6D98C6820FE430E00D5D2D0 /* VehicleList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E6D98C6820FE430E00D5D2D0 /* VehicleList */ = {
+			isa = PBXGroup;
+			children = (
+				E6D98C7420FE449600D5D2D0 /* VehicleListViewModel.swift */,
+				E6D98C7220FE445600D5D2D0 /* VehicleListViewController.swift */,
+			);
+			path = VehicleList;
+			sourceTree = "<group>";
+		};
+		E6D98C6920FE431D00D5D2D0 /* VehicleMap */ = {
+			isa = PBXGroup;
+			children = (
+				E6D98C7020FE444900D5D2D0 /* VehicleMapViewController.swift */,
+				E6D98C7620FE44A900D5D2D0 /* VehicleMapViewModel.swift */,
+			);
+			path = VehicleMap;
+			sourceTree = "<group>";
+		};
+		E6D98C7820FE484000D5D2D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6D98C7C20FE485A00D5D2D0 /* AFNetworking.framework */,
+				E6D98C7B20FE485900D5D2D0 /* NVActivityIndicatorView.framework */,
+				E6D98C7D20FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework */,
+				E6D98C7920FE484100D5D2D0 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +189,7 @@
 				E6D98C3E20FE41CC00D5D2D0 /* Sources */,
 				E6D98C3F20FE41CC00D5D2D0 /* Frameworks */,
 				E6D98C4020FE41CC00D5D2D0 /* Resources */,
+				E6D98C8120FE488500D5D2D0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -146,6 +230,7 @@
 				TargetAttributes = {
 					E6D98C4120FE41CC00D5D2D0 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 					};
 					E6D98C5520FE41CE00D5D2D0 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -192,12 +277,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E6D98C8120FE488500D5D2D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E6D98C3E20FE41CC00D5D2D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D98C4820FE41CD00D5D2D0 /* ViewController.swift in Sources */,
+				E6D98C6F20FE435B00D5D2D0 /* APIServiceManager.m in Sources */,
+				E6D98C7520FE449600D5D2D0 /* VehicleListViewModel.swift in Sources */,
+				E6D98C7720FE44A900D5D2D0 /* VehicleMapViewModel.swift in Sources */,
+				E6D98C6B20FE433800D5D2D0 /* Vehicle.swift in Sources */,
+				E6D98C7120FE444900D5D2D0 /* VehicleMapViewController.swift in Sources */,
+				E6D98C7320FE445600D5D2D0 /* VehicleListViewController.swift in Sources */,
 				E6D98C4620FE41CD00D5D2D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,8 +467,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVDM5TYCMM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MyTaxiChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,6 +481,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abel.MyTaxiChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTaxiChallenge/Service/MyTaxiChallenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -376,8 +492,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVDM5TYCMM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MyTaxiChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,6 +506,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abel.MyTaxiChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyTaxiChallenge/Service/MyTaxiChallenge-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
