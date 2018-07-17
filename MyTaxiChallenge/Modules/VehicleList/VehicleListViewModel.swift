@@ -47,13 +47,17 @@ class VehicleListViewModel {
     func getVehicles() {
         self.isLoading = true
         serviceManager.getVehiclesFromNePoint({ [weak self] (response) in
-            guard let strongSelf = self else { return }
+            guard let strongSelf = self  else { return }
             strongSelf.isLoading = false
-            let data = NSKeyedArchiver.archivedData(withRootObject: response as! NSDictionary)
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            let vehicles = try! decoder.decode(Vehicles.self, from: data)
-            strongSelf.processFetchedVehicles(vehicles: vehicles.poiList)
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: response, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let vehicles = try! decoder.decode(Vehicles.self, from: jsonData)
+                strongSelf.processFetchedVehicles(vehicles: vehicles.poiList)
+            } catch {
+                strongSelf.alertMessage = "Unexpected Error"
+            }
         }) { [weak self] (error, errorCode) in
             guard let strongSelf = self else { return }
             strongSelf.alertMessage = error
@@ -69,7 +73,7 @@ class VehicleListViewModel {
         let lon = String(format: "Lon: %.4f", vehicle.coordinate.longitude)
         let direction = String(format: "Heading: %.4f", vehicle.heading)
         
-        return VehicleCellViewModel(id: vehicle.id,
+        return VehicleCellViewModel(id: "\(vehicle.id)",
                                     position: lat + "\n" + lon + "\n" + direction,
                                     type: vehicle.type,
                                     state: vehicle.state)
@@ -87,7 +91,7 @@ class VehicleListViewModel {
 
 
 struct VehicleCellViewModel {
-    let id: Double
+    let id: String
     let position: String
     let type: String
     let state: String

@@ -22,6 +22,8 @@
 		E6D98C7E20FE485A00D5D2D0 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7B20FE485900D5D2D0 /* NVActivityIndicatorView.framework */; };
 		E6D98C7F20FE485A00D5D2D0 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7C20FE485A00D5D2D0 /* AFNetworking.framework */; };
 		E6D98C8020FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7D20FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework */; };
+		E6D98C8520FE5E8200D5D2D0 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C8320FE5E8200D5D2D0 /* VehicleTableViewCell.swift */; };
+		E6D98C8620FE5E8200D5D2D0 /* VehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C8420FE5E8200D5D2D0 /* VehicleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		E6D98C7B20FE485900D5D2D0 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		E6D98C7C20FE485A00D5D2D0 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		E6D98C7D20FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
+		E6D98C8320FE5E8200D5D2D0 /* VehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTableViewCell.swift; sourceTree = "<group>"; };
+		E6D98C8420FE5E8200D5D2D0 /* VehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 		E6D98C6820FE430E00D5D2D0 /* VehicleList */ = {
 			isa = PBXGroup;
 			children = (
+				E6D98C8220FE5E6A00D5D2D0 /* Custom Views */,
 				E6D98C7420FE449600D5D2D0 /* VehicleListViewModel.swift */,
 				E6D98C7220FE445600D5D2D0 /* VehicleListViewController.swift */,
 			);
@@ -177,6 +182,15 @@
 				E6D98C7920FE484100D5D2D0 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6D98C8220FE5E6A00D5D2D0 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6D98C8320FE5E8200D5D2D0 /* VehicleTableViewCell.swift */,
+				E6D98C8420FE5E8200D5D2D0 /* VehicleTableViewCell.xib */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D98C8620FE5E8200D5D2D0 /* VehicleTableViewCell.xib in Resources */,
 				E6D98C5020FE41CE00D5D2D0 /* LaunchScreen.storyboard in Resources */,
 				E6D98C4D20FE41CE00D5D2D0 /* Assets.xcassets in Resources */,
 				E6D98C4B20FE41CD00D5D2D0 /* Main.storyboard in Resources */,
@@ -301,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D98C8520FE5E8200D5D2D0 /* VehicleTableViewCell.swift in Sources */,
 				E6D98C6F20FE435B00D5D2D0 /* APIServiceManager.m in Sources */,
 				E6D98C7520FE449600D5D2D0 /* VehicleListViewModel.swift in Sources */,
 				E6D98C7720FE44A900D5D2D0 /* VehicleMapViewModel.swift in Sources */,
