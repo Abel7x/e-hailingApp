@@ -18,6 +18,7 @@ typedef void (^NetworkManagerFailure)(NSString *failureReason, NSInteger statusC
 @interface APIServiceManager : NSObject
 
 - (void)getVehiclesFromNePoint:(CLLocation*)nePoint swPoint:(CLLocation*)swPoint success:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure;
+- (void)getVehiclesFromNePoint:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure;
 
 @property (nonatomic, strong) AFHTTPSessionManager *networkingManager;
 

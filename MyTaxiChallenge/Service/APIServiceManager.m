@@ -60,4 +60,10 @@
         }
     }];
 }
+
+- (void)getVehiclesFromNePoint:(NetworkManagerSuccess)success failure:(NetworkManagerFailure)failure{
+    CLLocation* nePoint = [[CLLocation alloc] initWithLatitude:53.694865 longitude:10.099891];
+    CLLocation* swPoint = [[CLLocation alloc] initWithLatitude:53.394655 longitude:9.757589];
+    [self getVehiclesFromNePoint:nePoint swPoint:swPoint success:success failure:failure];
+}
 @end

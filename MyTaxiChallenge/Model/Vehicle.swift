@@ -28,7 +28,7 @@ struct Vehicles: Codable {
 }
 
 struct Vehicle: Codable {
-    let id: Int
+    let id: Double
     let coordinate: Coordinate
     let state: String
     let type: String
