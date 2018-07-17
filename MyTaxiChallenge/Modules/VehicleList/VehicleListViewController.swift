@@ -20,9 +20,14 @@ class VehicleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "VehicleTableViewCell", bundle: nil), forCellReuseIdentifier: "vehicleTableViewCell")
+        setupView()
         configureActivityIndicator()
         initViewModel()
+    }
+    
+    private func setupView() {
+        tableView.register(UINib(nibName: "VehicleTableViewCell", bundle: nil), forCellReuseIdentifier: "vehicleTableViewCell")
+        self.navigationItem.title = "Vehicles in Hamburg"
     }
     
     private func configureActivityIndicator() {
@@ -87,7 +92,6 @@ extension VehicleListViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleTableViewCell", for: indexPath) as! VehicleTableViewCell
         
         cell.congfigureWithVehicle(info: viewModel.getCellViewModel(at: indexPath))
-        // Configure the cell...
         
         return cell
     }

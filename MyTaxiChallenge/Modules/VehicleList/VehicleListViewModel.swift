@@ -50,7 +50,7 @@ class VehicleListViewModel {
             guard let strongSelf = self  else { return }
             strongSelf.isLoading = false
             do {
-                let jsonData = try JSONSerialization.data(withJSONObject: response, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let jsonData = try JSONSerialization.data(withJSONObject: response as Any, options: JSONSerialization.WritingOptions.prettyPrinted)
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
                 let vehicles = try! decoder.decode(Vehicles.self, from: jsonData)
