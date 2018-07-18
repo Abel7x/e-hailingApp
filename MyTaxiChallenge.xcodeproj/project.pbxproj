@@ -273,6 +273,11 @@
 					E6D98C4120FE41CC00D5D2D0 = {
 						CreatedOnToolsVersion = 9.3.1;
 						LastSwiftMigration = 0930;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					E6D98C5520FE41CE00D5D2D0 = {
 						CreatedOnToolsVersion = 9.3.1;

@@ -12,6 +12,8 @@ class VehicleTableViewCell: UITableViewCell {
 
     // MARK: - Properties & Outlets
     
+
+    @IBOutlet private weak var transView: UIView!
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var positionLabel: UILabel!
     @IBOutlet private weak var stateLabel: UILabel!
@@ -25,6 +27,16 @@ class VehicleTableViewCell: UITableViewCell {
         positionLabel.text = info.position
         stateLabel.text = info.state
         typeLabel.text = info.type
+        configureState(state: info.state)
+    }
+    
+    private func configureState(state: String){
+        switch state {
+        case "INACTIVE":
+            transView.isHidden = false
+        default:
+            transView.isHidden = true
+        }
     }
     
 }

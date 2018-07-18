@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tVE-Xk-Myo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tVE-Xk-Myo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.94221296456055836" green="1" blue="0.079165187065349918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="h1H-kk-8oK" kind="relationship" relationship="viewControllers" id="C5i-nb-8AR"/>
@@ -28,14 +31,18 @@
             </objects>
             <point key="canvasLocation" x="-451" y="151"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="ZxB-5b-F9g">
             <objects>
                 <navigationController id="Eqq-NO-Aje" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="88Y-fr-0I7"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="88Y-fr-0I7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aEU-bg-asf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.94221296460000004" green="1" blue="0.079165187070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="OyO-80-YSE" kind="relationship" relationship="rootViewController" id="2A8-1g-5d5"/>
@@ -53,7 +60,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-Ij-dh1">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-Ij-dh1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <connections>
                                     <outlet property="delegate" destination="OyO-80-YSE" id="Mnu-yL-GCc"/>
@@ -78,14 +85,18 @@
             </objects>
             <point key="canvasLocation" x="1208.8" y="481.70914542728639"/>
         </scene>
-        <!--Item-->
+        <!--Hamburg-->
         <scene sceneID="Ljj-DN-BKt">
             <objects>
                 <navigationController id="h1H-kk-8oK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="L5c-lP-fS6"/>
+                    <tabBarItem key="tabBarItem" title="Hamburg" image="scope" id="L5c-lP-fS6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RaU-LE-yzo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.94221296460000004" green="1" blue="0.079165187070000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="aGR-Zi-c45" kind="relationship" relationship="rootViewController" id="K1j-L8-0eU"/>
@@ -131,4 +142,8 @@
             <point key="canvasLocation" x="1208.8" y="-249.62518740629687"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="33" height="26"/>
+        <image name="scope" width="30" height="30"/>
+    </resources>
 </document>

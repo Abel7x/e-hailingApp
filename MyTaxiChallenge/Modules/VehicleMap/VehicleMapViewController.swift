@@ -15,6 +15,7 @@ class VehicleMapViewController: UIViewController {
     // MARK: - Properties
     
     var activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect.zero)
+    var locationManager:CLLocationManager!
     @IBOutlet private weak var mapView: MKMapView!
     
     lazy var viewModel: VehicleMapViewModel = {
@@ -25,11 +26,24 @@ class VehicleMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        configureUserLocation()
         configureActivityIndicator()
         initViewModel()
     }
     
     // MARK: - Private Methods
+    private func configureUserLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            //locationManager.startUpdatingHeading()
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
     
     private func setupView() {
         self.navigationItem.title = "Vehicles Near Me"
@@ -82,31 +96,33 @@ class VehicleMapViewController: UIViewController {
     }
 }
 
+// MARK: - Location Manager Delegate Methods
+
+extension VehicleMapViewController: CLLocationManagerDelegate{
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        manager.stopUpdatingLocation()
+        
+        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        mapView.setRegion(region, animated: true)
+        updateListOfCars()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
+    }
+    
+}
+
 // MARK: - Map View Related Code
 
 extension VehicleMapViewController: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if !(annotation is MKPointAnnotation) {
-            return nil
-        }
-        
-        let annotationIdentifier = "AnnotationIdentifier"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
-        
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView!.canShowCallout = true
-        }
-        else {
-            annotationView!.annotation = annotation
-        }
-        
-        let pinImage = UIImage(named: "customPinImage")
-        annotationView!.image = pinImage
-        
-        return annotationView
-    }
+
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         updateListOfCars()
@@ -127,7 +143,7 @@ extension VehicleMapViewController: MKMapViewDelegate {
             
             let myAnnotation = MKPointAnnotation()
             myAnnotation.coordinate = CLLocationCoordinate2DMake(vehicleAnnotation.lat, vehicleAnnotation.lon)
-            myAnnotation.title = vehicleAnnotation.id
+            myAnnotation.title = vehicleAnnotation.state
             mapView.addAnnotation(myAnnotation)
         }
     }
