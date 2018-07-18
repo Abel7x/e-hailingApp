@@ -10,10 +10,15 @@ import UIKit
 
 class VehicleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var positionLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    // MARK: - Properties & Outlets
+    
+    @IBOutlet private weak var idLabel: UILabel!
+    @IBOutlet private weak var positionLabel: UILabel!
+    @IBOutlet private weak var stateLabel: UILabel!
+    @IBOutlet private weak var typeLabel: UILabel!
+    
+    
+    // MARK: - Configuration
     
     func congfigureWithVehicle(info: VehicleCellViewModel) {
         idLabel.text = info.id

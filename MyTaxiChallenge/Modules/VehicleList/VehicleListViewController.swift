@@ -11,12 +11,17 @@ import NVActivityIndicatorView
 
 class VehicleListViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    // MARK: - Properties & Outlets
+    
+    @IBOutlet private weak var tableView: UITableView!
     var activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect.zero)
     
     lazy var viewModel: VehicleListViewModel = {
         return VehicleListViewModel()
     }()
+    
+    
+    // MARK: - View Controller Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,8 @@ class VehicleListViewController: UIViewController {
         configureActivityIndicator()
         initViewModel()
     }
+    
+    // MARK: - Private Methods
     
     private func setupView() {
         tableView.register(UINib(nibName: "VehicleTableViewCell", bundle: nil), forCellReuseIdentifier: "vehicleTableViewCell")
@@ -85,6 +92,8 @@ class VehicleListViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+// MARK: - Table View Delegete and Data Source Methods
 
 extension VehicleListViewController: UITableViewDelegate, UITableViewDataSource {
     

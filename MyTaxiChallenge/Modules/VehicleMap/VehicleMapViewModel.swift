@@ -9,7 +9,10 @@
 import Foundation
 
 class VehicleMapViewModel {
+    
+    // MARK: - Properties
     let serviceManager: APIServiceManager
+    let baseServiceParser: BaseServiceParser
     
     private var vehicles:[Vehicle] = [Vehicle]()
     
@@ -39,32 +42,36 @@ class VehicleMapViewModel {
         return cellViewModels.count
     }
     
-    init(serviceManager: APIServiceManager = APIServiceManager()) {
+    init(serviceManager: APIServiceManager = APIServiceManager(), baseParser: BaseServiceParser = BaseServiceParser()) {
         self.serviceManager = serviceManager
+        self.baseServiceParser = baseParser
     }
+    
+    // MARK: Public Methods
     
     func getVehicles(at nePoint: CLLocation, swPoint: CLLocation) {
         self.isLoading = true
         serviceManager.getVehiclesFromNePoint(nePoint, swPoint: swPoint, success:{ [weak self] (response) in
             guard let strongSelf = self  else { return }
             strongSelf.isLoading = false
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: response as Any, options: JSONSerialization.WritingOptions.prettyPrinted)
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                let vehicles = try! decoder.decode(Vehicles.self, from: jsonData)
-                strongSelf.processFetchedVehicles(vehicles: vehicles.poiList)
-            } catch {
+            guard let vehicles = strongSelf.baseServiceParser.parseResponse(response: response as Any, type: Vehicles.self) else {
                 strongSelf.alertMessage = "Unexpected Error"
+                return
             }
+            strongSelf.processFetchedVehicles(vehicles: vehicles.poiList)
         }) { [weak self] (error, errorCode) in
             guard let strongSelf = self else { return }
             strongSelf.alertMessage = error
         }
     }
-
     
-    func createAnnotationViewModel(vehicle: Vehicle) -> VehicleAnnotationViewModel {
+    func getVehicleAnnotationViewModels() -> [VehicleAnnotationViewModel] {
+        return cellViewModels
+    }
+
+    //MARK: - Private Methods
+    
+    private func createAnnotationViewModel(vehicle: Vehicle) -> VehicleAnnotationViewModel {
         return VehicleAnnotationViewModel(id: "\(vehicle.id)",
             lat: vehicle.coordinate.latitude,
             lon: vehicle.coordinate.longitude,
@@ -81,11 +88,9 @@ class VehicleMapViewModel {
         }
         cellViewModels = viewModels
     }
-    
-    func getVehicleAnnotationViewModels() -> [VehicleAnnotationViewModel] {
-        return cellViewModels
-    }
 }
+
+// MARK: - VehicleAnnotationViewModel Declaration
 
 struct VehicleAnnotationViewModel {
     let id: String

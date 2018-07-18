@@ -8,21 +8,6 @@
 
 import Foundation
 
-/*
- {
- "poiList": [{
- "id": -479925044,
- "coordinate": {
- "latitude": 53.5530854,
- "longitude": 9.955689
- },
- "state": "INACTIVE",
- "type": "TAXI",
- "heading": 0.0
- }]
- }
- */
-
 struct Vehicles: Codable {
     let poiList: [Vehicle]
 }

@@ -10,7 +10,10 @@ import Foundation
 
 class VehicleListViewModel {
     
+    // MARK: - Properties & Outlets
+    
     let serviceManager: APIServiceManager
+    let baseServiceParser: BaseServiceParser
     
     private var vehicles:[Vehicle] = [Vehicle]()
     
@@ -40,24 +43,25 @@ class VehicleListViewModel {
         return cellViewModels.count
     }
     
-    init(serviceManager: APIServiceManager = APIServiceManager()) {
+    // MARK: - Inits
+    
+    init(serviceManager: APIServiceManager = APIServiceManager(), baseParser: BaseServiceParser = BaseServiceParser()) {
         self.serviceManager = serviceManager
+        self.baseServiceParser = baseParser
     }
+    
+    // MARK: - Public Methods
     
     func getVehicles() {
         self.isLoading = true
         serviceManager.getVehiclesFromNePoint({ [weak self] (response) in
             guard let strongSelf = self  else { return }
             strongSelf.isLoading = false
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: response as Any, options: JSONSerialization.WritingOptions.prettyPrinted)
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                let vehicles = try! decoder.decode(Vehicles.self, from: jsonData)
-                strongSelf.processFetchedVehicles(vehicles: vehicles.poiList)
-            } catch {
+            guard let vehicles = strongSelf.baseServiceParser.parseResponse(response: response as Any, type: Vehicles.self) else {
                 strongSelf.alertMessage = "Unexpected Error"
+                return
             }
+            strongSelf.processFetchedVehicles(vehicles: vehicles.poiList)
         }) { [weak self] (error, errorCode) in
             guard let strongSelf = self else { return }
             strongSelf.alertMessage = error
@@ -79,6 +83,8 @@ class VehicleListViewModel {
                                     state: vehicle.state)
     }
     
+    // MARK: - Private Methods
+    
     private func processFetchedVehicles(vehicles: [Vehicle]) {
         self.vehicles = vehicles
         var viewModels = [VehicleCellViewModel]()
@@ -89,6 +95,7 @@ class VehicleListViewModel {
     }
 }
 
+// MARK: - VehicleCellViewModel Declaration
 
 struct VehicleCellViewModel {
     let id: String

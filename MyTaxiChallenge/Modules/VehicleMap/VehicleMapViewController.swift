@@ -12,19 +12,24 @@ import NVActivityIndicatorView
 
 class VehicleMapViewController: UIViewController {
 
+    // MARK: - Properties
+    
     var activityIndicator: NVActivityIndicatorView = NVActivityIndicatorView(frame: CGRect.zero)
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet private weak var mapView: MKMapView!
     
     lazy var viewModel: VehicleMapViewModel = {
         return VehicleMapViewModel()
     }()
     
+    // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         configureActivityIndicator()
         initViewModel()
     }
+    
+    // MARK: - Private Methods
     
     private func setupView() {
         self.navigationItem.title = "Vehicles Near Me"
@@ -77,10 +82,14 @@ class VehicleMapViewController: UIViewController {
     }
 }
 
+// MARK: - Map View Related Code
+
 extension VehicleMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
         
         let annotationIdentifier = "AnnotationIdentifier"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
@@ -93,20 +102,17 @@ extension VehicleMapViewController: MKMapViewDelegate {
             annotationView!.annotation = annotation
         }
         
-        if let vehicleAnnotation = annotation as? VehicleAnnotation {
-            annotationView?.image = vehicleAnnotation.image
-        }
-        
+        let pinImage = UIImage(named: "customPinImage")
+        annotationView!.image = pinImage
         
         return annotationView
     }
-    
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         updateListOfCars()
     }
     
-    func updateListOfCars(){
+    private func updateListOfCars(){
         let northEast = mapView.convert(CGPoint(x: mapView.bounds.width, y: 0), toCoordinateFrom: mapView)
         let southWest = mapView.convert(CGPoint(x: 0, y: mapView.bounds.height), toCoordinateFrom: mapView)
         
@@ -115,17 +121,19 @@ extension VehicleMapViewController: MKMapViewDelegate {
         viewModel.getVehicles(at: nePoint, swPoint: swPoint)
     }
     
-    func addVehiclesToMap(list: [VehicleAnnotationViewModel]) {
+    private func addVehiclesToMap(list: [VehicleAnnotationViewModel]) {
         mapView.removeAnnotations(mapView.annotations)
         for vehicleAnnotation in list {
-            guard let image = UIImage(named: "car-top") else { return }
-            let myAnnotation = VehicleAnnotation(with: CLLocationCoordinate2DMake(vehicleAnnotation.lat, vehicleAnnotation.lon),
-                                                                    image: image)
-            myAnnotation.coordinate = CLLocationCoordinate2DMake(vehicleAnnotation.lat, vehicleAnnotation.lon);
+            
+            let myAnnotation = MKPointAnnotation()
+            myAnnotation.coordinate = CLLocationCoordinate2DMake(vehicleAnnotation.lat, vehicleAnnotation.lon)
+            myAnnotation.title = vehicleAnnotation.id
             mapView.addAnnotation(myAnnotation)
         }
     }
 }
+
+// MARK: - VehicleAnnotation Declaration
 
 class VehicleAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
