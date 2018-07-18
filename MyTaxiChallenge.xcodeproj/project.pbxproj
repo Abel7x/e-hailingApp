@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E6714BD020FF9C2600E3B780 /* BaseServiceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6714BCF20FF9C2600E3B780 /* BaseServiceParser.swift */; };
+		E6714BD220FFB09500E3B780 /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6714BD120FFB09500E3B780 /* ApiServiceTests.swift */; };
 		E6A0706A20FE82EC00F85D7E /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A0706920FE82EC00F85D7E /* UIImage+extensions.swift */; };
 		E6D98C4620FE41CD00D5D2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C4520FE41CD00D5D2D0 /* AppDelegate.swift */; };
 		E6D98C4B20FE41CD00D5D2D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C4920FE41CD00D5D2D0 /* Main.storyboard */; };
 		E6D98C4D20FE41CE00D5D2D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C4C20FE41CE00D5D2D0 /* Assets.xcassets */; };
 		E6D98C5020FE41CE00D5D2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C4E20FE41CE00D5D2D0 /* LaunchScreen.storyboard */; };
-		E6D98C5B20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C5A20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift */; };
 		E6D98C6B20FE433800D5D2D0 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C6A20FE433800D5D2D0 /* Vehicle.swift */; };
 		E6D98C6F20FE435B00D5D2D0 /* APIServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C6E20FE435B00D5D2D0 /* APIServiceManager.m */; };
 		E6D98C7120FE444900D5D2D0 /* VehicleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C7020FE444900D5D2D0 /* VehicleMapViewController.swift */; };
@@ -26,6 +26,8 @@
 		E6D98C8020FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D98C7D20FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework */; };
 		E6D98C8520FE5E8200D5D2D0 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D98C8320FE5E8200D5D2D0 /* VehicleTableViewCell.swift */; };
 		E6D98C8620FE5E8200D5D2D0 /* VehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D98C8420FE5E8200D5D2D0 /* VehicleTableViewCell.xib */; };
+		E6F8C74720FFB6B90051A8A3 /* VehicleListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8C74620FFB6B90051A8A3 /* VehicleListViewModelTests.swift */; };
+		E6F8C74920FFB9860051A8A3 /* stub.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F8C74820FFB9860051A8A3 /* stub.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		E6714BCF20FF9C2600E3B780 /* BaseServiceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceParser.swift; sourceTree = "<group>"; };
+		E6714BD120FFB09500E3B780 /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
 		E6A0706920FE82EC00F85D7E /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+extensions.swift"; path = "MyTaxiChallenge/Extensions/UIImage+extensions.swift"; sourceTree = SOURCE_ROOT; };
 		E6D98C4220FE41CC00D5D2D0 /* MyTaxiChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxiChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D98C4520FE41CD00D5D2D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +51,6 @@
 		E6D98C4F20FE41CE00D5D2D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6D98C5120FE41CE00D5D2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6D98C5620FE41CE00D5D2D0 /* MyTaxiChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTaxiChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6D98C5A20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxiChallengeTests.swift; sourceTree = "<group>"; };
 		E6D98C5C20FE41CE00D5D2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6D98C6A20FE433800D5D2D0 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		E6D98C6C20FE435A00D5D2D0 /* MyTaxiChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTaxiChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		E6D98C7D20FE485A00D5D2D0 /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
 		E6D98C8320FE5E8200D5D2D0 /* VehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTableViewCell.swift; sourceTree = "<group>"; };
 		E6D98C8420FE5E8200D5D2D0 /* VehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleTableViewCell.xib; sourceTree = "<group>"; };
+		E6F8C74620FFB6B90051A8A3 /* VehicleListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListViewModelTests.swift; sourceTree = "<group>"; };
+		E6F8C74820FFB9860051A8A3 /* stub.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stub.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +146,10 @@
 		E6D98C5920FE41CE00D5D2D0 /* MyTaxiChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E6D98C5A20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift */,
 				E6D98C5C20FE41CE00D5D2D0 /* Info.plist */,
+				E6714BD120FFB09500E3B780 /* ApiServiceTests.swift */,
+				E6F8C74620FFB6B90051A8A3 /* VehicleListViewModelTests.swift */,
+				E6F8C74820FFB9860051A8A3 /* stub.json */,
 			);
 			path = MyTaxiChallengeTests;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F8C74920FFB9860051A8A3 /* stub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D98C5B20FE41CE00D5D2D0 /* MyTaxiChallengeTests.swift in Sources */,
+				E6714BD220FFB09500E3B780 /* ApiServiceTests.swift in Sources */,
+				E6F8C74720FFB6B90051A8A3 /* VehicleListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
